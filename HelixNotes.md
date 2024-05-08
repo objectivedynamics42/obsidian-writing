@@ -88,12 +88,13 @@
 ## MESA/Boogie
 ### Dual Rectifier
 |Channel|Model Name|
+|--------------|----------------|
 |Single Channel|*Cali Rectifire*|
 ### Lonestar
-|Channel|Model Name|
-|-------|----------|
-|Channel 1|*Cali Texas Ch 1*|
-|Channel 2|*Cali Texas Ch 2*|
+| Channel   | Model Name        |
+| --------- | ----------------- |
+| Channel 1 | *Cali Texas Ch 1* |
+| Channel 2 | *Cali Texas Ch 2* |
 ### Mark IV
 |Channel|Model Name|
 |-------|----------|
