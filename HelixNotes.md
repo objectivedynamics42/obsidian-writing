@@ -5,6 +5,11 @@
 | Channel        | Model Name    |
 | -------------- | ------------- |
 | Single Channel | *Divided Duo* |
+#### Original Controls
+* Volume 1
+* Volume 2
+* Tone
+* Cut
 ## Fender
 ### 1958 5C3 Tweed Deluxe
 | Channel        | Model Name       |
