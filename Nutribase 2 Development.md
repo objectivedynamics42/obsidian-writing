@@ -8,7 +8,7 @@
 ## UC3 - The user views the details of a food item
 1. The user opens the foods view and selects an item
 2. The **food details** view will open, displaying the following details for the selected food:
-       * Calories per unit. By default this will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie
+       - Calories per unit. By default this will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie
 ## UC4 - The user views the available meals
 1. The user launches Nutribase
 2. From the navigation menu, the user selects *Meals*
@@ -16,9 +16,9 @@
 ## UC5 - The user views a meal's details
 1. From the meal list, the user selects a meal
 2. The **meal details** view will open showing:
-   * The name of the meal
-   * A list of the foods that comprise the meal
-   * Each food will have its calorie contribution displayed
+   - The name of the meal
+   - A list of the foods that comprise the meal
+   - Each food will have its calorie contribution displayed
 ## UC - The user adds an ingredient to a meal - scenario 1
 ### Add from food details
 * From the food details *
