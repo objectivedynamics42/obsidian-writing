@@ -1,4 +1,35 @@
 Things I've discovered about Android and Kotlin development
+# Room / KSP / KAPT Dependency Hell
+## The *RoomWord* CodeLab
+* I read the [android-room-with-a-view-kotlin](https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0) codelab
+* That lead me to read [this referenced article](https://developer.android.com/jetpack/androidx/releases/room) on adding a dependency on _Room_ and subsequently [this article](https://developer.android.com/build/dependencies#google-maven) on the Android Gradle Plugin. The latter article was last updated in June 2024 so at the time of writing you'd hope that it would be reasonably reliable.
+
+## Adding Room to an Android Studio Project
+I didn't really get very far trying to reverse engineer the RoomWorld app so I pursued an alternative, from the ground up approach using Gemini. So, courtesy of Gemini, ```~/AndroidStudioProjects/Room261ClientAndroidApi28``` currently builds and runs, with ```Room 2.6.1```, at least in the app build.gradle.kts file.
+No code dependencies have been added yet though.
+
+The lines that I needed to add to the app ```build.gradle.kts``` file were:
+```
+val room_version = "2.6.1"
+implementation("androidx.room:room-runtime:$room_version")  
+annotationProcessor("androidx.room:room-compiler:$room_version")
+```
+### Codelab - 2024-06-30 (Sunday)
+I temporarily skipped ```steps 11 and 12```of the [android-room-with-a-view-kotlin](https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0) codelab and completed ```step13```. On second thoughts though I should return and add the missing steps before continuing onto ```step 14```. It'll mean that my app is essentially a clone of the codelab app but it also means I'm less likely to miss something that'll cause a  problem
+
+# Kotlin version in Android Studio
+**Note that the following didn''t work after upgrading to *Android Studio Koala***
+Launch a terminal window from Android Studio and run the command:
+```
+    $ ./gradlew --version
+```
+You should see something like the following which shows that we're using ***Kotlin 1.9.20***
+
+![[Pasted image 20240621180310.png]]
+
+
+# Room
+See [this tutorial](https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0)
 
 # Layouts
 ## DP stands for Device Independent Pixels
@@ -64,6 +95,11 @@ Values:
   The _Elvis_ operator. if the value is non null, the operator returns the value. Otherwise it returns an alternative value
 
 # Activity Lifecycle
+## Parts of the activity lifecycle
+* Total lifetime
+* Visible (and inverse) lifetime - 
+* Foreground (and inverse) lifetime - and inverse
+The framework provides methods for the start/end of each lifetime
 ## Lifecycle methods
 * onCreate
 * onRestart - see below too
@@ -85,7 +121,49 @@ Android can destroy any activity that's not in use in order to free resources - 
 ## Activity Instance State
 
 Activities can be destroyed and re-created in interesting scenarios. One is when changing orientation!
-* onSaveInstanceState - only called when the system is destroying an activity with the intention of potentially recreating the activity instance later
+* onSaveInstanceState - only called when the system is destroying an activity with the intention of potentially recreating the activity instance later. There are multiple overloads of this method so when overriding, make sure to override the version that takes a single parameter of type Bundle. Save the value to the bundle using e.g. putInt
 * onCreate is passed a bundle that can be used to rebuild previously persisted state
 * Don't store everything though. Just the stuff that's changed since the activity was initially created because when our activity is recreated we'll still have access to the activity intent
-**Check:** the last point in particular will require some reading I think
+## More about onCreate
+This will be invoked after a destroy/re-create cycle and in that case we should be getting the instance state from the bundle as mentioned above. However it's also called in situations where the bundle hasn't been populate - e.g. on launch.
+So we need to check whether it's safe to get instance state from the bundle or whether to get it from somewhere else - e.g. the intent.
+Here's an example using the _Elvis_ operator to select the value from the correct object:
+```
+instanceValue =
+	savedInstanceState?.getInt(MY_INSTANCE_VALUE, MY_INSTANCE_VALUE_NOT_SET)?:
+    intent.getExtra(MY_INSTANCE_VALUE, MY_INSTANCE_VALUE_NOT_SET)
+```
+# Appendix
+## Investigate
+* * Achieving a _card view_ appearance using RecyclerView
+* Using NavigationDrawer to enable the user to slide out the current view to see other stuff (like app settings?)
+
+# Customizing Styles and Themes with Resources
+
+## Hard and soft localization
+### Hard localization
+* Different tax calculation logic for different countries
+* Custom UI layouts for different regions
+* Modifying database schema for multilingual support
+### Soft localization
+* Storing translations in external files
+* Using configuration files for locale-specific settings
+* Employing a plugin system for additional locale support
+
+## Styles
+* Styling information stored within xml files
+* Supports a DRY approach
+```
+view.bakgroundColor = black // Bad approach
+view.backgroundColor = @colors.black // Good approach
+```
+## Themes
+* Also support a DRY approach
+* Baked into Android, extensible and can be overwritten
+* Can use them to create, for example, a Dark Mode for an app
+### Dynamic themes
+Look into these
+### Theme Localisation
+Different cultures can have different themes
+### Alpha Channels
+Alpha Channels for transparency
