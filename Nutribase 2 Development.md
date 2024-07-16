@@ -11,11 +11,14 @@
        * Calories per unit. By default this will be kCal per 100g but for some foods other units will be more appropriate. For example, kCal per item for a cookie
 ## UC4 - The user views the available meals
 1. The user launches Nutribase
-2. Select *Meals* from the navigation
+2. From the navigation menu, the user selects *Meals*
 3. The **meal list** will be displayed showing the available meals
-## UC - The user views a meal's details
-* From the meal list, the user selects a meal
-* The **meal details** will be displayed
+## UC5 - The user views a meal's details
+1. From the meal list, the user selects a meal
+2. The **meal details** view will open showing:
+   * The name of the meal
+   * A list of the foods that comprise the meal
+   * Each food will have its calorie contribution displayed
 ## UC - The user adds an ingredient to a meal - scenario 1
 ### Add from food details
 * From the food details *
