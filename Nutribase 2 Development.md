@@ -1,4 +1,7 @@
 # Use Cases
+In the use cases the following styles are in use:
+1. User interface Views, Lists,  Pages and Editors are displayed **Like This**
+2. User actions are shown ```Like This```
 ## UC1  - The user views an ingredient's details
 1. The user launches Nutribase
 2. As the default, the **Category List** will open to display the defined categories e.g. *Dairy*,*Fruit*
@@ -28,8 +31,10 @@
 1. With the **Meal Details View** open the user clicks ```Add```
 2. The *Ingredient Picker* will open to show the available list of ingredients
 3. The user selects an ingredient and clicks ```Next```
-4. The *Ingredient Editor* will open, showing the selected ingredient. The user will enter the desired amount for the ingredient.
+4. The *Ingredient Editor* will open, showing the selected ingredient. The user will enter the desired amount for the ingredient
    - The units will be predetermined by the ingredient's entry in the database and will be displayed in the editor 
+5. The user clicks ```Add``` to confirm the amount or ```Cancel``` to discard it
+6. The user is returned to the **Meal Details View**
  
 ## UC - The user modifies a meal ingredient
 **What does the user to to get here and what do they do once they are?**
