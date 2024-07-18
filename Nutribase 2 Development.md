@@ -1,7 +1,8 @@
 # Use Cases
-In the use cases the following styles are in use:
+The use cases employ the following style convensions:
 1. User interface Views, Lists,  Pages and Editors are displayed **Like This**
 2. User actions are shown ```Like This```
+3. Italics are used for *emphasis*
 ## UC1  - The user views an ingredient's details
 1. The user launches Nutribase
 2. As the default, the **Category List** will open to display the defined categories e.g. *Dairy*,*Fruit*
