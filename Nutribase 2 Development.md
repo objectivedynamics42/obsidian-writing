@@ -1,29 +1,38 @@
 # Use Cases
-## UC1  - The user views the defined food categories
+## UC1  - The user views a food's details
 1. The user launches Nutribase
-2. As the default, the **categories view** will open to display the defined food categories
-## UC2  - The user views the foods in a category
-1. The user selects a category from the categories view
-2. The **foods view** will open, showing the foods from the selected category
-## UC3 - The user views the details of a food item
-1. The user opens the foods view and selects an item
-2. The **food details** view will open, displaying the following details for the selected food:
-   - Calories per unit. By default this will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie
+2. As the default, the **Category List** will open to display the defined food categories
+3. The user selects a category from the **Category List**
+4. The **Food List** will open, showing the foods from the selected category
+5. The user selects a food from the list
+6. The **Food Details View**  will open, displaying the following details for the selected food:
+   - Calories per unit.
+     By default this will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie.
+     The choice of unit will be fixed for a given food.
 ## UC4 - The user views the available meals
 1. The user launches Nutribase
 2. From the navigation menu, the user selects *Meals*
-3. The **meal list** will be displayed showing the available meals
+3. The **Meal List** will be displayed showing the available meals
 ## UC5 - The user views a meal's details
 1. From the meal list, the user selects a meal
-2. The **meal details** view will open showing:
+2. The **Meal Details** view will open showing:
    - The name of the meal
-   - A list of the foods that comprise the meal
-   - Each food will have its calorie contribution displayed
-## UC - The user adds an ingredient to a meal - scenario 1
-### Add from food details
-* From the food details *
-## UC - The user adds an ingredient to a meal - scenario 2
-### Add from meal details
+   - The foods that comprise the meal along with each ingredient's calorie contribution
+## UC6 - The user adds an ingredient to a meal
+### Scenario 1 - Adding an ingredient from the food details view
+**Need to make it clear which meal the ingredient is being added to**
+1. With the food details view open the user clicks *Add* (or *+*)
+2. The **Ingredient Editor** will open, showing the selected ingredient. The user will enter the desired amount for the ingredient.
+   - The units will be predetermined by the ingredient's entry in the database and will be displayed in the editor 
+3. The user clicks *Add* to confirm the amount or *Cancel* to discard it
+4. The user is returned to the **Food Details View**
+### Scenario 2 - Adding an ingredient from the meal details view
+1. With the **Meal Details View** open the user clicks *Add* (or *+*)
+2. The *Ingredient Picker* will open to show the available list of ingredients
+3. The user selects an ingredient and clicks *Next*
+4. The *Ingredient Editor* will open, showing the selected ingredient. The user will enter the desired amount for the ingredient.
+   - The units will be predetermined by the ingredient's entry in the database and will be displayed in the editor 
+ 
 ## UC - The user modifies a meal ingredient
 Navigation by one of the 
 ## The user adds a new meal
