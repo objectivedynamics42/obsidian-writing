@@ -1,10 +1,10 @@
 # Use Cases
-## UC1  - The user views a ingredient's details
+## UC1  - The user views an ingredient's details
 1. The user launches Nutribase
 2. As the default, the **Category List** will open to display the defined categories e.g. *Dairy*, *Fruit*
 3. The user selects a category from the **Category List**
 4. The **Ingredient List** will open, showing the ingredients from the selected category
-5. The user selects a ingredient from the list
+5. The user selects an ingredient from the list
 6. The **Ingredient Details View**  will open displaying the details of the selected ingredient.
    - By default the calorie unit will be *kCal per 100g* but for some ingredients other units will be more appropriate. For example, *kCal per item* for a cookie.
    - The choice of unit will be fixed for a given ingredient
