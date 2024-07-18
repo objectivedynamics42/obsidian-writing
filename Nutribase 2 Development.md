@@ -5,10 +5,9 @@
 3. The user selects a category from the **Category List**
 4. The **Food List** will open, showing the foods from the selected category
 5. The user selects a food from the list
-6. The **Food Details View**  will open, displaying the following details for the selected food:
-   - Calories per unit.
-     By default this will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie.
-     The choice of unit will be fixed for a given food.
+6. The **Food Details View**  will open displaying the details of the selected food.
+   - By default the calorie unit will be *kCal per 100g* but for some foods other units will be more appropriate. For example, *kCal per item* for a cookie.
+   - The choice of unit will be fixed for a given food
 ## UC4 - The user views the available meals
 1. The user launches Nutribase
 2. From the navigation menu, the user selects *Meals*
