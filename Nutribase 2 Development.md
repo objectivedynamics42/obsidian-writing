@@ -1,7 +1,7 @@
 # Use Cases
 ## UC1  - The user views an ingredient's details
 1. The user launches Nutribase
-2. As the default, the **Category List** will open to display the defined categories e.g. *Dairy*, *Fruit*
+2. As the default, the **Category List** will open to display the defined categories e.g. ```Dairy```,```Fruit```
 3. The user selects a category from the **Category List**
 4. The **Ingredient List** will open, showing the ingredients from the selected category
 5. The user selects an ingredient from the list
